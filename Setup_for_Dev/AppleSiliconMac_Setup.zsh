@@ -10,6 +10,7 @@ echo "mas-cliインストール完了"
 echo "これで、masコマンドを利用して、Mac App Storeのアプリをインストールできます。"
 typeset -g -a masapps
 masapps=(
+	#TEST
 	#開発
 	497799835   #Xcode
 	1496833156  #Playgrounds
