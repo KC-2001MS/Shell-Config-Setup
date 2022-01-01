@@ -16,12 +16,6 @@ masapps=(
 	1450874784  #Transporter
 	899247664   #TestFlight
 	640199958   #Developer
-	1436522307  #Transmit
-	1388020431  #DevCleaner
-	1527554407  #Mockup
-	1502044457  #Whisk
-	1460330618  #Hype 4
-	1484781782  #Snippit
 	#書類作成
 	462054704   #Microsoft Word
 	462058435   #Microsoft Excel
@@ -74,10 +68,6 @@ casksapps=(
 	visual-studio-code         #Visual Studio Code
 	github                     #Github Desktop
 	sf-symbols
-	#ゲーム
-	steam                      #Steam
-	#資料作成
-	texshop                    #TeXShop
 	)
 echo "Casksからインストール開始"
 for i in $casksapps; do
