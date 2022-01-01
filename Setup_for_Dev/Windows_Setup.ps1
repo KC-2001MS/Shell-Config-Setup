@@ -75,17 +75,10 @@ $windowsapps = @(
   "Box.Box"
   #資料作成
   "Adobe Acrobat DC (64-bit)"
-  #ベンチマーク
-  "Cinebench"
-  "Geekbench 5"
-  #ゲーム
-  "Steam"
   #開発
   "Microsoft Visual Studio Code"
   "GitHub Desktop"
   "Microsoft.PowerShell"
-  #メーラー
-  #"Mozilla Thunderbird"
 )
 foreach ($elem in $windowsapps) {
   winget install -e $elem

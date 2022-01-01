@@ -10,7 +10,6 @@ echo "mas-cliインストール完了"
 echo "これで、masコマンドを利用して、Mac App Storeのアプリをインストールできます。"
 typeset -g -a masapps
 masapps=(
-	#TEST
 	#開発
 	497799835   #Xcode
 	1496833156  #Playgrounds
@@ -30,16 +29,7 @@ masapps=(
 	409201541   #Pages
 	409203825   #Numbers
 	409183694   #Keynote
-	#ベンチマーク
-	1438772273  #Cinebench
-	1478447657  #Geekbench 5
-	1168254295  #AmorphousDiskMark
 	#ユーティリティー
-	1380563956  #辞書 by 物書堂
-	413897608   #Pastel
-	1494942612  #Morpho
-	417375580   #BetterSnapTool
-	441968334   #SpeakLine
 	1295203466  #Microsoft Remote Desktop
 	#クラウド
 	823766827   #OneDrive
@@ -65,7 +55,6 @@ casksapps=(
 	brave-browser-beta         #Brave Beta
 	firefox-developer-edition  #Firefox Div
 	#コミュニケーションツール
-	discord                    #Discord
 	microsoft-teams            #Teams
 	zoom                       #Zoom
 	#クラウド
@@ -74,9 +63,7 @@ casksapps=(
 	box-drive                  #Box Drive
 	onedrive                   #One Drive
 	#ユーティリティー
-	bettertouchtool            #Better Touch Tool
 	cheatsheet                 #Cheatsheet
-	cleanmymac                 #Clean My Mac X
 	#クリエイティブ
 	adobe-creative-cloud       #Adobe Creative Cloud
 	blender                    #Blender
@@ -87,8 +74,6 @@ casksapps=(
 	visual-studio-code         #Visual Studio Code
 	github                     #Github Desktop
 	sf-symbols
-	#ベンチマーク
-	blender-benchmark          #Blender Benchmark
 	#ゲーム
 	steam                      #Steam
 	#資料作成
