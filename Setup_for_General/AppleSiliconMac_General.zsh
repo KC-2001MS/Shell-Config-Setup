@@ -21,7 +21,7 @@ masapps=(
 	1295203466  #Microsoft Remote Desktop
 	#クラウド
 	823766827   #OneDrive
-	#
+	#コミュニケーションツール
 	539883307   #LINE
 	)
 echo "Mac App Storeからインストール開始"
@@ -44,7 +44,7 @@ casksapps=(
 	cheatsheet                 #Cheatsheet
 	#ゲーム
 	steam                      #Steam
-	#
+	#コミュニケーションツール
 	discord                    #Discord
 	)
 echo "Casksからインストール開始"

@@ -55,7 +55,7 @@ $windowsapps = @(
   "Adobe Acrobat DC (64-bit)"  #Adobe Acrobat DC
   #ゲーム
   "Steam"                      #Steam
-  #
+  #コミュニケーションツール
   "LINE.LINE"                  #LINE
   "Discord.Discord"            #Discord
 )
