@@ -43,21 +43,28 @@ foreach ($elem in $preinstallapps) {
 #アプリのインストール
 $windowsapps = @(
   #ブラウザ
-  "Google Chrome"              #Chrome
-  "Brave"                      #Brave
-  "Mozilla Firefox"            #Firefox
+  "Google Chrome"                      #Chrome
+  "Brave"                              #Brave
+  "Mozilla Firefox"                    #Firefox
   #クラウド
-  "Google Drive"               #Google Drive
-  "iCloud"                     #iCloud
-  "Dropbox"                    #Dropbox
-  "Box.Box"                    #Box
+  "Google Drive"                       #Google Drive
+  "iCloud"                             #iCloud
+  "Dropbox"                            #Dropbox
+  "Box.Box"                            #Box
   #資料作成
-  "Adobe Acrobat DC (64-bit)"  #Adobe Acrobat DC
+  "Adobe Acrobat DC (64-bit)"          #Adobe Acrobat DC
+  "TheDocumentFoundation.LibreOffice"  #LibreOffice
   #ゲーム
-  "Steam"                      #Steam
+  "Steam"                              #Steam
   #コミュニケーションツール
-  "LINE.LINE"                  #LINE
-  "Discord.Discord"            #Discord
+  "LINE.LINE"                          #LINE
+  "Discord.Discord"                    #Discord
+    #iPhone&iPad
+  #"Apple.iTunes"                      #iTunes
+  #ユーティリティ
+  "QL-Win.QuickLook"                   #QuickLook
+  "Bopsoft.Listary"                    #Listary
+  "Microsoft Remote Desktop"           #Microsoft Remote Desktop
 )
 foreach ($elem in $windowsapps) {
   winget install -e $elem

@@ -51,6 +51,7 @@ casksapps=(
 	#コミュニケーションツール
 	microsoft-teams            #Teams
 	zoom                       #Zoom
+	discord                    #Discord
 	#クラウド
 	google-drive               #Google Drive
 	dropbox                    #Dropbox Drive

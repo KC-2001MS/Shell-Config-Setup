@@ -43,32 +43,41 @@ foreach ($elem in $preinstallapps) {
 #アプリのインストール
 $windowsapps = @(
   #ブラウザ
-  "Google Chrome"                   #Chrome
-  "Brave"                           #Brave
-  "Mozilla Firefox"                 #Firefox
-  "Google Chrome Dev"               #Chrome Dev
-  "Brave Beta"                      #Brave Beta
-  "Microsoft Edge Dev"              #Edge Dev
-  "Firefox Developer Edition"       #Firefox Dev
+  "Google Chrome"                      #Chrome
+  "Brave"                              #Brave
+  "Mozilla Firefox"                    #Firefox
+  "Google Chrome Dev"                  #Chrome Dev
+  "Brave Beta"                         #Brave Beta
+  "Microsoft Edge Dev"                 #Edge Dev
+  "Firefox Developer Edition"          #Firefox Dev
   #クラウド
-  "Google Drive"                    #Google Drive
-  "iCloud"                          #iCloud
-  "Dropbox"                         #Dropbox
-  "Box.Box"                         #Box
+  "Google Drive"                       #Google Drive
+  "iCloud"                             #iCloud
+  "Dropbox"                            #Dropbox
+  "Box.Box"                            #Box
   #資料作成
-  "Adobe Acrobat DC (64-bit)"       #Adobe Acrobat DC
+  "Adobe Acrobat DC (64-bit)"          #Adobe Acrobat DC
+  "TheDocumentFoundation.LibreOffice"  #LibreOffice
   #開発
-  "Microsoft Visual Studio Code"    #Visual Studio Code
-  "GitHub Desktop"                  #GitHub Desktop
-  "Microsoft.PowerShell"            #PowerShell
-  "Android Studio"                  #Android Studio
-  "Docker Desktop"                  #Docker Desktop
-  "Figma.Figma"                     #Figma
+  "Visual Studio Community 2022"       #Visual Studio Community 2022
+  "Microsoft Visual Studio Code"       #Visual Studio Code
+  "GitHub Desktop"                     #GitHub Desktop
+  "Microsoft.PowerShell"               #PowerShell
+  "Android Studio"                     #Android Studio
+  "Docker Desktop"                     #Docker Desktop
+  "Figma.Figma"                        #Figma
   #コミュニケーションツール
-  "Microsoft Teams"                 #Teams
-  "Zoom"                            #Zoom
-  "Messenger"                       #Messenger
-  "SlackTechnologies.Slack"         #SlackTechnologies.Slack
+  "Microsoft Teams"                    #Teams
+  "Zoom"                               #Zoom
+  "Messenger"                          #Messenger
+  "SlackTechnologies.Slack"            #SlackTechnologies.Slack
+  "Discord.Discord"                    #Discord
+  #iPhone&iPad
+  #"Apple.iTunes"                      #iTunes
+  #ユーティリティ
+  "QL-Win.QuickLook"                   #QuickLook
+  "Bopsoft.Listary"                    #Listary
+  "Microsoft Remote Desktop"           #Microsoft Remote Desktop
 )
 foreach ($elem in $windowsapps) {
   winget install -e $elem
