@@ -79,6 +79,14 @@ $windowsapps = @(
   "Microsoft Visual Studio Code"
   "GitHub Desktop"
   "Microsoft.PowerShell"
+  "Android Studio"
+  "Docker Desktop"
+  "Figma.Figma"
+  #コミュニケーションツール
+  "Microsoft Teams"
+  "Zoom"
+  "Messenger"
+  "SlackTechnologies.Slack"
 )
 foreach ($elem in $windowsapps) {
   winget install -e $elem

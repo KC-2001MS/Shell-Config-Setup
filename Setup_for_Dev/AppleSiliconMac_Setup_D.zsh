@@ -60,14 +60,14 @@ casksapps=(
 	cheatsheet                 #Cheatsheet
 	#クリエイティブ
 	adobe-creative-cloud       #Adobe Creative Cloud
-	blender                    #Blender
-	figma                      #Figma
 	#開発
 	docker                     #Docker
 	android-studio             #Android Studio
 	visual-studio-code         #Visual Studio Code
 	github                     #Github Desktop
-	sf-symbols
+	sf-symbols                 #SF Symbols
+	figma                      #Figma
+	powershell
 	)
 echo "Casksからインストール開始"
 for i in $casksapps; do
