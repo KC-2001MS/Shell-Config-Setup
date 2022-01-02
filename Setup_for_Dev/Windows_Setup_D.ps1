@@ -4,54 +4,36 @@ $preinstallapps = @(
   "king.com.CandyCrushFriends"
   "king.com.FarmHeroesSaga"
   "Microsoft.MicrosoftSolitaireCollection"
-  #コルタナ
-  "Microsoft.549981C3F5F10"
-  #Grooveミュージック
-  "Microsoft.ZuneMusic"
-  #Mixed Realityポータル
-  "Microsoft.MixedReality.Portal"
   #Officeを始めよう＆OneNote
-  "Microsoft.MicrosoftOfficeHub"
-  "Microsoft.Office.OneNote"
-  #People
-  "Microsoft.People"
-  #Skype
-  "Microsoft.SkypeApp"
-  #Spotify
-  "SpotifyAB.SpotifyMusic"
+  "Microsoft.MicrosoftOfficeHub"            #offce
+  "Microsoft.Office.OneNote"                #OneNote
+  "Microsoft.People"                        #People
+  "Microsoft.SkypeApp"                      #Skype
+  "SpotifyAB.SpotifyMusic"                  #Spotify
   #Xbox関連
-  "Microsoft.XboxGamingOverlay"
-  "Microsoft.Xbox.TCUI"
-  "Microsoft.XboxApp"
-  "Microsoft.XboxGameOverlay"
-  "Microsoft.XboxIdentityProvider"
-  "Microsoft.XboxSpeechToTextOverlay"
-  #あらーむ＆クロック
-  #"Microsoft.WindowsAlarms"
-  #映画＆テレビ
-  "Microsoft.ZuneVideo"
-  #カメラ
-  #"Microsoft.WindowsCamera"
-  #スマホ同期
-  #"Microsoft.YourPhone"
-  #天気
-  #"Microsoft.BingWeather"
-  #問い合わせ
-  "Microsoft.GetHelp"
-  #ヒント
-  "Microsoft.Getstarted"
-  #フィードバックHub
-  "Microsoft.Getstarted"
-  #付箋
-  "Microsoft.MicrosoftStickyNotes"
-  #マップ
-  #"Microsoft.WindowsMaps"
-  #メール、カレンダー
-  #"microsoft.windowscommunicationsapps"
-  #メッセージング
-  #"Microsoft.Messaging"
-  #モバイル通信プラン
-  #"Microsoft.OneConnect"
+  "Microsoft.XboxGamingOverlay"             #
+  "Microsoft.Xbox.TCUI"                     #
+  "Microsoft.XboxApp"                       #
+  "Microsoft.XboxGameOverlay"               #
+  "Microsoft.XboxIdentityProvider"          #
+  "Microsoft.XboxSpeechToTextOverlay"       #
+  #その他
+  "Microsoft.549981C3F5F10"                 #コルタナ
+  "Microsoft.ZuneMusic"                     #Grooveミュージック
+  "Microsoft.MixedReality.Portal"           #Mixed Realityポータル
+  #"Microsoft.WindowsAlarms"                #あらーむ＆クロック
+  "Microsoft.ZuneVideo"                     #映画＆テレビ
+  #"Microsoft.WindowsCamera"                #カメラ
+  #"Microsoft.YourPhone"                    #スマホ同期
+  #"Microsoft.BingWeather"                  #天気
+  "Microsoft.GetHelp"                       #問い合わせ
+  "Microsoft.Getstarted"                    #ヒント
+  "Microsoft.Getstarted"                    #フィードバックHub
+  "Microsoft.MicrosoftStickyNotes"          #付箋
+  #"Microsoft.WindowsMaps"                  #マップ
+  #"microsoft.windowscommunicationsapps"    #メール、カレンダー
+  #"Microsoft.Messaging"                    #メッセージング
+  #"Microsoft.OneConnect"                   #モバイル通信プラン
 )
 
 foreach ($elem in $preinstallapps) {

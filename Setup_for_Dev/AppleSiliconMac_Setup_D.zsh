@@ -67,7 +67,7 @@ casksapps=(
 	github                     #Github Desktop
 	sf-symbols                 #SF Symbols
 	figma                      #Figma
-	powershell
+	powershell                 #PowerShell
 	)
 echo "Casksからインストール開始"
 for i in $casksapps; do
