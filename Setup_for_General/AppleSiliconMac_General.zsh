@@ -10,12 +10,6 @@ echo "mas-cliインストール完了"
 echo "これで、masコマンドを利用して、Mac App Storeのアプリをインストールできます。"
 typeset -g -a masapps
 masapps=(
-	#開発
-	497799835   #Xcode
-	1496833156  #Playgrounds
-	1450874784  #Transporter
-	899247664   #TestFlight
-	640199958   #Developer
 	#書類作成
 	462054704   #Microsoft Word
 	462058435   #Microsoft Excel
@@ -27,9 +21,8 @@ masapps=(
 	1295203466  #Microsoft Remote Desktop
 	#クラウド
 	823766827   #OneDrive
-	#コミュニケーションツール
-	803453959   #Slack
-	1480068668  #Messenger
+	#
+	539883307   #LINE
 	)
 echo "Mac App Storeからインストール開始"
 for i in $masapps; do
@@ -43,31 +36,16 @@ casksapps=(
 	microsoft-edge             #Edge
 	brave-browser              #Brave
 	firefox                    #Firefox
-	safari-technology-preview  #Safari-TP
-	google-chrome-dev          #Chrome Div
-	microsoft-edge-dev         #Egde Div
-	brave-browser-beta         #Brave Beta
-	firefox-developer-edition  #Firefox Div
-	#コミュニケーションツール
-	microsoft-teams            #Teams
-	zoom                       #Zoom
 	#クラウド
 	google-drive               #Google Drive
 	dropbox                    #Dropbox Drive
 	box-drive                  #Box Drive
-	onedrive                   #One Drive
 	#ユーティリティー
 	cheatsheet                 #Cheatsheet
-	#クリエイティブ
-	adobe-creative-cloud       #Adobe Creative Cloud
-	#開発
-	docker                     #Docker
-	android-studio             #Android Studio
-	visual-studio-code         #Visual Studio Code
-	github                     #Github Desktop
-	sf-symbols                 #SF Symbols
-	figma                      #Figma
-	powershell                 #PowerShell
+	#ゲーム
+	steam                      #Steam
+	#
+	discord                    #Discord
 	)
 echo "Casksからインストール開始"
 for i in $casksapps; do

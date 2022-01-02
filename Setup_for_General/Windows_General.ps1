@@ -1,9 +1,9 @@
 #アプリの削除
 $preinstallapps = @(
   #ゲーム
-  "king.com.CandyCrushFriends"
-  "king.com.FarmHeroesSaga"
-  "Microsoft.MicrosoftSolitaireCollection"
+  "king.com.CandyCrushFriends"              #Candy Crush Friends
+  "king.com.FarmHeroesSaga"                 #Farm Heroes Saga
+  "Microsoft.MicrosoftSolitaireCollection"  #Solitaire Collection
   #Officeを始めよう＆OneNote
   "Microsoft.MicrosoftOfficeHub"            #offce
   "Microsoft.Office.OneNote"                #OneNote
@@ -11,12 +11,12 @@ $preinstallapps = @(
   "Microsoft.SkypeApp"                      #Skype
   "SpotifyAB.SpotifyMusic"                  #Spotify
   #Xbox関連
-  "Microsoft.XboxGamingOverlay"             #
-  "Microsoft.Xbox.TCUI"                     #
-  "Microsoft.XboxApp"                       #
-  "Microsoft.XboxGameOverlay"               #
-  "Microsoft.XboxIdentityProvider"          #
-  "Microsoft.XboxSpeechToTextOverlay"       #
+  "Microsoft.XboxGamingOverlay"             #Xboxゲームバー
+  "Microsoft.Xbox.TCUI"                     #Xbox Live
+  "Microsoft.XboxApp"                       #Xbox 本体コンバニオン
+  "Microsoft.XboxGameOverlay"               #xbox Game Overlay
+  "Microsoft.XboxIdentityProvider"          #Xbox Identity Provider
+  "Microsoft.XboxSpeechToTextOverlay"       #Xbox Speech To Text Overlay
   #その他
   "Microsoft.549981C3F5F10"                 #コルタナ
   "Microsoft.ZuneMusic"                     #Grooveミュージック
@@ -43,32 +43,21 @@ foreach ($elem in $preinstallapps) {
 #アプリのインストール
 $windowsapps = @(
   #ブラウザ
-  "Google Chrome"
-  "Brave"
-  "Mozilla Firefox"
-  "Google Chrome Dev"
-  "Brave Beta"
-  "Microsoft Edge Dev"
-  "Firefox Developer Edition"
+  "Google Chrome"              #Chrome
+  "Brave"                      #Brave
+  "Mozilla Firefox"            #Firefox
   #クラウド
-  "Google Drive"
-  "iCloud"
-  "Dropbox"
-  "Box.Box"
+  "Google Drive"               #Google Drive
+  "iCloud"                     #iCloud
+  "Dropbox"                    #Dropbox
+  "Box.Box"                    #Box
   #資料作成
-  "Adobe Acrobat DC (64-bit)"
-  #開発
-  "Microsoft Visual Studio Code"
-  "GitHub Desktop"
-  "Microsoft.PowerShell"
-  "Android Studio"
-  "Docker Desktop"
-  "Figma.Figma"
-  #コミュニケーションツール
-  "Microsoft Teams"
-  "Zoom"
-  "Messenger"
-  "SlackTechnologies.Slack"
+  "Adobe Acrobat DC (64-bit)"  #Adobe Acrobat DC
+  #ゲーム
+  "Steam"                      #Steam
+  #
+  "LINE.LINE"                  #LINE
+  "Discord.Discord"            #Discord
 )
 foreach ($elem in $windowsapps) {
   winget install -e $elem
