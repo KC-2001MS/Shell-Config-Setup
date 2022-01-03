@@ -1,5 +1,47 @@
 #!/bin/zsh
 
+#setup
+#Dock設定
+defaults write com.apple.dock tilesize -int 64                                                                          #アイコンサイズ       
+defaults write com.apple.dock magnification -bool false                                                                 #マウスポインタを近づけた時の拡大の有無
+defaults write com.apple.dock largesize -int 70                                                                         #マウスポインタを近づけた時のアイコンサイズ
+defaults write com.apple.dock orientation -string "down"                                                                #ドックの位置
+defaults write com.apple.dock mineffect -string "scale"                                                                 #ウィンドウをしまう時のエフェクト
+defaults write -g AppleWindowTabbingMode -string "fullscreen"                                                           #書類をタブで開く場合を指定
+defaults write -g AppleActionOnDoubleClick -string "Maximize"                                                           #ウィンドウのタイトルバーのダブルクリック
+defaults write com.apple.dock minimize-to-application -bool true                                                        #ウィンドウをアプリケーションアイコンにしまう
+defaults write com.apple.dock launchanim -bool false                                                                    #起動中のアプリケーションをアニメーションで表示
+defaults write com.apple.dock autohide -bool true                                                                       #Dockを自動的に表示/非表示
+defaults write com.apple.dock show-process-indicators -bool true                                                        #起動済みのアプリケーションにインジケータを表示
+defaults write com.apple.dock show-recents -bool false                                                                  #最近使ったアプリケーションをDockに表示
+killall Dock
+#finder設定
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true                                                         #全ての拡張子のファイルを表示する
+defaults write com.apple.finder _FXSortFoldersFirst -bool true                                                          #名前で並べ替えを選択時にディレクトリを前に置くようにする
+defaults write com.apple.finder AnimateWindowZoom -bool true                                                            #フォルダを開くときのアニメーション
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool false                                                     #Finder のタイトルバーにフルパスを表示する
+defaults write com.apple.finder AppleShowAllFiles true                                                                  #隠しファイルの表示
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false                                              #拡張子変更時の警告を無効化する
+defaults write com.apple.finder ShowPathbar -bool true                                                                  #パスバーを表示する
+defaults write com.apple.finder ShowTabView -bool true                                                                  #タブバーを表示する
+defaults write com.apple.finder ShowStatusBar -bool false                                                               #ステータスバーを表示する
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"                                                     #検索時にデフォルトでカレントディレクトリを検索する
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true                                            #ネットワークストレージに .DS_Storeファイルを作成しない
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true                                                #USBに .DS_Storeファイルを作成しない
+killall Finder
+#Safari設定
+	#一般
+defaults write com.apple.Safari AutoOpenSafeDownloads -bool false                                                       #ファイルのダウンロード後に自動でファイルを開くのを無効化する
+defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool false                                               #アドレスバーに完全な URL を表示
+defaults write com.apple.Safari ShowStatusBar -bool true                                                                #ステータスバーを表示する
+	#開発
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true    #Safari の開発・デバッグメニューを有効にする
+defaults write com.apple.Safari IncludeDevelopMenu -bool true                                                           #Safari の開発・デバッグメニューを有効にする
+defaults write com.apple.Safari IncludeInternalDebugMenu -bool true                                                     #Safari の開発・デバッグメニューを有効にする
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true                                    #Safari の開発・デバッグメニューを有効にする
+killall Safari
+
+#install Homebrew and mas-cil
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 wait
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/keisukec/.zprofile
@@ -8,6 +50,8 @@ echo "これで、brewコマンドを利用してhomebrewのアプリをイン�
 brew install mas
 echo "mas-cliインストール完了"
 echo "これで、masコマンドを利用して、Mac App Storeのアプリをインストールできます。"
+
+#install GUIapps
 typeset -g -a masapps
 masapps=(
 	#開発
