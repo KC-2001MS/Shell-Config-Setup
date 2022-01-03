@@ -1,6 +1,9 @@
 #!/bin/zsh
 
 #setup
+#MenuBar設定
+defaults write com.apple.menuextra.clock DateFormat -string "M\u6708d\u65e5(EEE)  H:mm:ss"                              #日付と時刻のフォーマット（24時間表示、秒表示あり、日付・曜日を表示）
+killall SystemUIServer
 #Dock設定
 defaults write com.apple.dock tilesize -int 64                                                                          #アイコンサイズ       
 defaults write com.apple.dock magnification -bool false                                                                 #マウスポインタを近づけた時の拡大の有無
@@ -15,11 +18,15 @@ defaults write com.apple.dock autohide -bool true                               
 defaults write com.apple.dock show-process-indicators -bool true                                                        #起動済みのアプリケーションにインジケータを表示
 defaults write com.apple.dock show-recents -bool false                                                                  #最近使ったアプリケーションをDockに表示
 killall Dock
+#スクリーンショット設定
+defaults write com.apple.screencapture location ~/Pictures                                                              #保存場所を変更
+killall SystemUIServer
 #finder設定
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true                                                         #全ての拡張子のファイルを表示する
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -boolean true                                          #保存ダイアログを詳細設定で表示
 defaults write com.apple.finder _FXSortFoldersFirst -bool true                                                          #名前で並べ替えを選択時にディレクトリを前に置くようにする
 defaults write com.apple.finder AnimateWindowZoom -bool true                                                            #フォルダを開くときのアニメーション
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool false                                                     #Finder のタイトルバーにフルパスを表示する
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool false                                                     #Finderのタイトルバーにフルパスを表示する
 defaults write com.apple.finder AppleShowAllFiles true                                                                  #隠しファイルの表示
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false                                              #拡張子変更時の警告を無効化する
 defaults write com.apple.finder ShowPathbar -bool true                                                                  #パスバーを表示する
