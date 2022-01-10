@@ -27,7 +27,7 @@ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -boolean true  
 defaults write com.apple.finder _FXSortFoldersFirst -bool true                                                          #名前で並べ替えを選択時にディレクトリを前に置くようにする
 defaults write com.apple.finder AnimateWindowZoom -bool true                                                            #フォルダを開くときのアニメーション
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool false                                                     #Finderのタイトルバーにフルパスを表示する
-defaults write com.apple.finder AppleShowAllFiles true                                                                  #隠しファイルの表示
+defaults write com.apple.finder AppleShowAllFiles false                                                                 #隠しファイルの表示
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false                                              #拡張子変更時の警告を無効化する
 defaults write com.apple.finder ShowPathbar -bool true                                                                  #パスバーを表示する
 defaults write com.apple.finder ShowTabView -bool true                                                                  #タブバーを表示する
