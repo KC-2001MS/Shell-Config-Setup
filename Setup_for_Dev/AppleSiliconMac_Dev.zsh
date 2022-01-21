@@ -1,26 +1,73 @@
 #!/bin/zsh
 
 #setup
-#MenuBar設定
-defaults write com.apple.menuextra.clock DateFormat -string "M\u6708d\u65e5(EEE)  H:mm:ss"                              #日付と時刻のフォーマット（24時間表示、秒表示あり、日付・曜日を表示）
-killall SystemUIServer
-#Dock設定
+#一般
+defaults write -g AppleInterfaceStyle -string "Dark"                                                                    #外観モード
+defaults write -g AppleAccentColor -int 4                                                                               #アクセントカラー
+defaults write -g AppleHighlightColor -string "0.698039 0.843137 1.000000 Blue"                                         #強調表示色
+defaults write -g NSTableViewDefaultSizeMode -int 2                                                                     #サイドバーのアイコンサイズ
+defaults write -g AppleReduceDesktopTinting -int 0                                                                      #ウインドウで壁紙の色合い調整を許可
+defaults write -g AppleShowScrollBars -string "Automatic"                                                               #スクロールバーの表示
+defaults write -g AppleScrollerPagingBehavior -int 1                                                                    #スクロールバーのクリック時
+defaults write -g AppleWindowTabbingMode -string "fullscreen"                                                           #書類をタブで開く場合を指定
+defaults write -g NSCloseAlwaysConfirmsChanges -int 1
+defaults write -g NSQuitAlwaysKeepsWindows -int 0
+#デスクトップとスクリーンセーバ（自身で設定）
+#Dockとメニューバー
+	#Dock
 defaults write com.apple.dock tilesize -int 64                                                                          #アイコンサイズ       
 defaults write com.apple.dock magnification -bool false                                                                 #マウスポインタを近づけた時の拡大の有無
 defaults write com.apple.dock largesize -int 70                                                                         #マウスポインタを近づけた時のアイコンサイズ
 defaults write com.apple.dock orientation -string "down"                                                                #ドックの位置
 defaults write com.apple.dock mineffect -string "scale"                                                                 #ウィンドウをしまう時のエフェクト
-defaults write -g AppleWindowTabbingMode -string "fullscreen"                                                           #書類をタブで開く場合を指定
 defaults write -g AppleActionOnDoubleClick -string "Maximize"                                                           #ウィンドウのタイトルバーのダブルクリック
 defaults write com.apple.dock minimize-to-application -bool true                                                        #ウィンドウをアプリケーションアイコンにしまう
 defaults write com.apple.dock launchanim -bool false                                                                    #起動中のアプリケーションをアニメーションで表示
 defaults write com.apple.dock autohide -bool true                                                                       #Dockを自動的に表示/非表示
 defaults write com.apple.dock show-process-indicators -bool true                                                        #起動済みのアプリケーションにインジケータを表示
 defaults write com.apple.dock show-recents -bool false                                                                  #最近使ったアプリケーションをDockに表示
-killall Dock
-#スクリーンショット設定
+	#メニューバー
+defaults write -g _HIHideMenuBar -int 0                                                                                 #デスクトップにメニューバーを自動的に表示/非表示
+defaults write -g AppleMenuBarVisibleInFullscreen -int 0                                                                #フルスクリーンでメニューバーを自動的に表示/非表示
+defaults write com.apple.menuextra.clock DateFormat -string "M\u6708d\u65e5(EEE)  H:mm:ss"                              #日付と時刻のフォーマット（24時間表示、秒表示あり、日付・曜日を表示）
+	#コントロールセンター（自身で設定）
+#Mission Control（自身で設定）
+#Siri（自身で設定）
+#Spotlight（自身で設定）
+#言語と地域（自身で設定）
+#通知と集中モード（自身で設定）
+#インターネットアカウント（自身で設定）
+#パスワード（自身で設定）
+#ウォレットとApple Pay（自身で設定）
+#ユーザとグループ（自身で設定）
+#アクセシビリティ（自身で設定）
+#スクリーンタイム（自身で設定）
+#拡張機能（自身で設定）
+#セキュリティとプライバシー（自身で設定）
+#ソフトウェアアップデート（自身で設定）
+#ネットワーク（自身で設定）
+#Bluetooth（自身で設定）
+#サウンド（自身で設定）
+#Touch ID（自身で設定）
+#キーボード（自身で設定）
+#トラックパット（自身で設定）
+defaults write -g com.apple.trackpad.forceClick -int 1
+defaults write -g ContextMenuGesture -int 1
+defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -int 1
+#マウス（自身で設定）
+#ディスプレイ（自身で設定）
+#プリンタとスキャナ（自身で設定）
+#バッテリー（自身で設定）
+#日付と時刻（自身で設定）
+#共有（自身で設定）
+#Time Machine（自身で設定）
+#起動ディスク（自身で設定）
+
+#設定画面にない設定
+	#スクリーンショット設定
 defaults write com.apple.screencapture location ~/Pictures                                                              #保存場所を変更
-killall SystemUIServer
+
 #finder設定
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true                                                         #全ての拡張子のファイルを表示する
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -boolean true                                          #保存ダイアログを詳細設定で表示
@@ -35,7 +82,6 @@ defaults write com.apple.finder ShowStatusBar -bool false                       
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"                                                     #検索時にデフォルトでカレントディレクトリを検索する
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true                                            #ネットワークストレージに .DS_Storeファイルを作成しない
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true                                                #USBに .DS_Storeファイルを作成しない
-killall Finder
 #Safari設定
 	#一般
 defaults write com.apple.Safari AutoOpenSafeDownloads -bool false                                                       #ファイルのダウンロード後に自動でファイルを開くのを無効化する
@@ -46,6 +92,11 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 defaults write com.apple.Safari IncludeDevelopMenu -bool true                                                           #Safari の開発・デバッグメニューを有効にする
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true                                                     #Safari の開発・デバッグメニューを有効にする
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true                                    #Safari の開発・デバッグメニューを有効にする
+
+
+killall Dock
+killall SystemUIServer
+killall Finder
 killall Safari
 
 #install Homebrew and mas-cil
