@@ -46,7 +46,11 @@ defaults write com.apple.spaces spans-displays -bool true                       
 defaults write com.apple.assistant.support.plist "Assistant Enabled" -bool false                                        #"Hey Siri"を聞き取る
 #Spotlight（自身で設定）
 #言語と地域（自身で設定）
+defaults write .GlobalPreferences AppleLanguages -array en ja                                                           #優先する言語
+defaults write .GlobalPreferences AppleLocale -string "en-JP"                                                           #地域
 defaults write .GlobalPreferences AppleTemperatureUnit -string "Celsius"                                                #温度
+defaults write .GlobalPreferences AppleMetricUnits -int 1                                                               #測定単位
+defaults write .GlobalPreferences AppleFirstWeekday -dict gregorian 1                                                   #週の始まりの曜日
 #通知と集中モード（自身で設定）
 #インターネットアカウント（自身で設定）
 #パスワード（自身で設定）
@@ -56,7 +60,8 @@ defaults write .GlobalPreferences AppleTemperatureUnit -string "Celsius"        
 #スクリーンタイム（自身で設定）
 #拡張機能（自身で設定）
 #セキュリティとプライバシー（自身で設定）
-#ソフトウェアアップデート（自身で設定）
+#ソフトウェアアップデート
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 0
 #ネットワーク（自身で設定）
 #Bluetooth（自身で設定）
 #サウンド（自身で設定）
