@@ -31,10 +31,22 @@ defaults write -g _HIHideMenuBar -int 0                                         
 defaults write -g AppleMenuBarVisibleInFullscreen -int 0                                                                #フルスクリーンでメニューバーを自動的に表示/非表示
 defaults write com.apple.menuextra.clock DateFormat -string "M\u6708d\u65e5(EEE)  H:mm:ss"                              #日付と時刻のフォーマット（24時間表示、秒表示あり、日付・曜日を表示）
 	#コントロールセンター（自身で設定）
-#Mission Control（自身で設定）
+defaults write com.apple.controlcenter "NSStatusItem Visible WiFi" -bool true
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist WiFi -int 18                                  #Wi-Fi メニューバーに表示
+defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool true
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Bluetooth -int 18                             #Bluetooth メニューバーに表示
+defaults write com.apple.Siri StatusMenuVisible -bool true                                                              #siri　メニューバーに表示
+#Mission Control
+defaults write com.apple.dock mru-spaces -bool false                                                                    #最新の使用状況に基づいて操作スペースを自動的に並べ替える
+defaults write .GlobalPreferences AppleSpacesSwitchOnActivate -bool true                                                #アプリケーションの切り替えで、アプリケーションのウィンドウが開いている操作スペースに移動
+defaults write com.apple.dock expose-group-apps -bool false                                                             #ウインドウをアプリケーションごとにグループ化
+defaults write com.apple.spaces spans-displays -bool true                                                               #ウインドウごとに個別の操作スペース
+	#キーボードとマウスのショートカット（自身で設定）
 #Siri（自身で設定）
+defaults write com.apple.assistant.support.plist "Assistant Enabled" -bool false                                        #"Hey Siri"を聞き取る
 #Spotlight（自身で設定）
 #言語と地域（自身で設定）
+defaults write .GlobalPreferences AppleTemperatureUnit -string "Celsius"                                                #温度
 #通知と集中モード（自身で設定）
 #インターネットアカウント（自身で設定）
 #パスワード（自身で設定）
