@@ -35,7 +35,25 @@ defaults write com.apple.controlcenter "NSStatusItem Visible WiFi" -bool true
 defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist WiFi -int 18                                  #Wi-Fi メニューバーに表示
 defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool true
 defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Bluetooth -int 18                             #Bluetooth メニューバーに表示
-defaults write com.apple.Siri StatusMenuVisible -bool true                                                              #siri　メニューバーに表示
+defaults write com.apple.controlcenter "NSStatusItem Visible Airdrop" -bool false
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Airdrop -int 8                                #AirDrop メニューバーに表示
+defaults write com.apple.controlcenter "NSStatusItem Visible FocusModes" -bool true
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist FocusModes -int 2                             #集中モード メニューバーに表示
+defaults write com.apple.controlcenter "NSStatusItem Visible KeyboardBrightness" -bool false
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist KeyboardBrightness -int 8                     #キーボードの輝度 メニューバーに表示
+defaults write com.apple.airplay showInMenuBarIfPresent -bool false
+defaults write com.apple.airplay "NSStatusItem Visible com.apple.menuextra.airplay" -bool false                         #画面ミラーリング メニューバーに表示
+
+defaults write com.apple.controlcenter "NSStatusItem Visible Sound" -bool false
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Sound -int 24                                 #サウンド メニューバーに表示
+defaults write com.apple.controlcenter "NSStatusItem Visible NowPlaying" -bool false
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist NowPlaying -int 24                            #再生中 メニューバーに表示
+	#その他のモジュール
+defaults write com.apple.controlcenter "NSStatusItem Visible Battery" -bool true
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Battery -int 18                               #バッテリー メニューバーに表示
+
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist BatteryShowPercentage -bool true              #バッテリー 割合（％）を表示
+defaults write com.apple.Siri StatusMenuVisible -bool true                                                              #siri メニューバーに表示
 #Mission Control
 defaults write com.apple.dock mru-spaces -bool false                                                                    #最新の使用状況に基づいて操作スペースを自動的に並べ替える
 defaults write .GlobalPreferences AppleSpacesSwitchOnActivate -bool true                                                #アプリケーションの切り替えで、アプリケーションのウィンドウが開いている操作スペースに移動
@@ -71,9 +89,13 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightC
 #ディスプレイ（自身で設定）
 #プリンタとスキャナ（自身で設定）
 #バッテリー（自身で設定）
+defaults write com.apple.controlcenter "NSStatusItem Visible Battery" -bool true
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Battery -int 18                               #メニューバーにバッテリー状況を表示
 #日付と時刻（自身で設定）
 #共有（自身で設定）
-#Time Machine（自身で設定）
+#Time Machine
+sudo tmutil disable                                                                                                     #バックアップを自動生成
+
 #起動ディスク（自身で設定）
 
 #設定画面にない設定
