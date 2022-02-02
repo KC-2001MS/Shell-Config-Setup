@@ -43,17 +43,25 @@ defaults write com.apple.controlcenter "NSStatusItem Visible KeyboardBrightness"
 defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist KeyboardBrightness -int 8                     #キーボードの輝度 メニューバーに表示
 defaults write com.apple.airplay showInMenuBarIfPresent -bool false
 defaults write com.apple.airplay "NSStatusItem Visible com.apple.menuextra.airplay" -bool false                         #画面ミラーリング メニューバーに表示
-
+defaults write com.apple.controlcenter "NSStatusItem Visible Display" -bool true
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Display -int 2                                #ディスプレイ メニューバーに表示
 defaults write com.apple.controlcenter "NSStatusItem Visible Sound" -bool false
 defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Sound -int 24                                 #サウンド メニューバーに表示
 defaults write com.apple.controlcenter "NSStatusItem Visible NowPlaying" -bool false
 defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist NowPlaying -int 24                            #再生中 メニューバーに表示
 	#その他のモジュール
+defaults write com.apple.controlcenter "NSStatusItem Visible AccessibilityShortcuts" -bool false
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist AccessibilityShortcuts -int 8                 #アクセシビリティのショートカット メニューバーに表示
 defaults write com.apple.controlcenter "NSStatusItem Visible Battery" -bool true
 defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Battery -int 18                               #バッテリー メニューバーに表示
-
 defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist BatteryShowPercentage -bool true              #バッテリー 割合（％）を表示
-defaults write com.apple.Siri StatusMenuVisible -bool true                                                              #siri メニューバーに表示
+defaults write com.apple.controlcenter "NSStatusItem Visible UserSwitcher" -bool false
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist UserSwitcher -int 24                          #ファストユーザースイッチ メニューバーに表示
+	#メニューバーのみ（自身で設定）
+defaults write com.apple.Spotlight "NSStatusItem Visible Item-0" -bool true
+defaults -currentHost write com.apple.Spotlight MenuItemHidden -int 0                                                   #Spotlight メニューバーに表示
+defaults write com.apple.Siri StatusMenuVisible -bool true                                                              #Siri メニューバーに表示
+
 #Mission Control
 defaults write com.apple.dock mru-spaces -bool false                                                                    #最新の使用状況に基づいて操作スペースを自動的に並べ替える
 defaults write .GlobalPreferences AppleSpacesSwitchOnActivate -bool true                                                #アプリケーションの切り替えで、アプリケーションのウィンドウが開いている操作スペースに移動
@@ -61,8 +69,32 @@ defaults write com.apple.dock expose-group-apps -bool false                     
 defaults write com.apple.spaces spans-displays -bool true                                                               #ウインドウごとに個別の操作スペース
 	#キーボードとマウスのショートカット（自身で設定）
 #Siri（自身で設定）
-defaults write com.apple.assistant.support.plist "Assistant Enabled" -bool false                                        #"Hey Siri"を聞き取る
-#Spotlight（自身で設定）
+defaults write com.apple.assistant.support.plist "Assistant Enabled" -bool false                                        #"Siriに頼む"を有効にする
+defaults write com.apple.Siri VoiceTriggerUserEnabled -int 0                                                            #"Hey Siri"を聞き取る
+#defaults write com.apple.Siri StatusMenuVisible -bool true                                                             #メニューバーにSiriを表示
+#Spotlight
+defaults write com.apple.spotlight orderedItems -array \
+    '{"enabled" = 1; "name" = "APPLICATIONS";}' \
+    '{"enabled" = 1; "name" = "SOURCE";}' \
+    '{"enabled" = 1; "name" = "SYSTEM_PREFS";}' \
+    '{"enabled" = 1; "name" = "BOOKMARKS";}' \
+    '{"enabled" = 1; "name" = "CONTACT";}' \
+    '{"enabled" = 1; "name" = "DIRECTORIES";}' \
+    '{"enabled" = 1; "name" = "DOCUMENTS";}' \
+    '{"enabled" = 1; "name" = "EVENT_TODO";}' \
+    '{"enabled" = 1; "name" = "FONTS";}' \
+    '{"enabled" = 1; "name" = "IMAGES";}' \
+    '{"enabled" = 1; "name" = "MENU_CONVERSION";}' \
+    '{"enabled" = 1; "name" = "MENU_DEFINITION";}' \
+    '{"enabled" = 1; "name" = "MENU_EXPRESSION";}' \
+    '{"enabled" = 1; "name" = "MENU_OTHER";}' \
+    '{"enabled" = 1; "name" = "MENU_SPOTLIGHT_SUGGESTIONS";}' \
+    '{"enabled" = 1; "name" = "MESSAGES";}' \
+    '{"enabled" = 1; "name" = "MOVIES";}' \
+    '{"enabled" = 1; "name" = "MUSIC";}' \
+    '{"enabled" = 1; "name" = "PDF";}' \
+    '{"enabled" = 1; "name" = "PRESENTATIONS";}' \
+    '{"enabled" = 1; "name" = "SPREADSHEETS";}'
 #言語と地域（自身で設定）
 defaults write .GlobalPreferences AppleLanguages -array en ja                                                           #優先する言語
 defaults write .GlobalPreferences AppleLocale -string "en-JP"                                                           #地域
