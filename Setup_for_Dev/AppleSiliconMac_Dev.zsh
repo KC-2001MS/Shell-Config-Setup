@@ -117,12 +117,63 @@ defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 0
 #サウンド（自身で設定）
 #Touch ID（自身で設定）
 #キーボード（自身で設定）
-#トラックパット（自身で設定）
-defaults write -g com.apple.trackpad.forceClick -int 1
-defaults write -g ContextMenuGesture -int 1
-defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -int 1
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -int 1
-#マウス（自身で設定）
+#トラックパット
+	#ポイントとクリック
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -int 2
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerTapGesture -int 2                  #調べる＆データ検出
+defaults write com.apple.AppleMultitouchTrackpad TrackpadCornerSecondaryClick -int 2
+defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -boolean false
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -boolean false                     #副ボタンのクリック
+defaults write com.apple.AppleMultitouchTrackpad Clicking -int 0
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -int 0                                       #タップでクリック
+defaults write -g com.apple.trackpad.scaling -float 0.6875                                                              #軌跡の速さ
+	#スクロールとズーム
+defaults write -g com.apple.trackpad.scaling -boolean true                                                              #スクロールの方向
+defaults write com.apple.AppleMultitouchTrackpad TrackpadPinch -boolean true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadPinch -boolean true                           #拡大／縮小
+defaults write com.apple.AppleMultitouchTrackpad TrackpadTwoFingerDoubleTapGesture -boolean true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadTwoFingerDoubleTapGesture -boolean true       #スマートズーム
+defaults write com.apple.AppleMultitouchTrackpad TrackpadRotate -boolean true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRotate -boolean true                          #回転
+	#その他のジェスチャ
+defaults write -g AppleEnableSwipeNavigateWithScrolls -boolean true
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerHorizSwipeGesture -int 0
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerVertSwipeGesture -int 0
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 0
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerVertSwipeGesture -int 0            #ページ間をスワイプ
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerHorizSwipeGesture -int 2
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 2           #フルスクリーンアプリケーション間をスワイプ
+defaults write com.apple.AppleMultitouchTrackpad TrackpadTwoFingerFromRightEdgeSwipeGesture -int 3
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadTwoFingerFromRightEdgeSwipeGesture -int 3     #通知センター
+defaults write com.apple.AppleMultitouchTrackpad  TrackpadFourFingerVertSwipeGesture -int 2
+defaults write com.apple.applemultitouchtrackpad  Trackpadthreefingervertswipegesture -int 2
+defaults write com.apple.dock  showMissionControlGestureEnabled -boolean true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad  TrackpadFourFingerVertSwipeGesture -int 2
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad  TrackpadThreeFingerVertSwipeGesture -int 2           #Mission Control
+defaults write com.apple.AppleMultitouchTrackpad  TrackpadFourFingerVertSwipeGesture -int 2
+defaults write com.apple.AppleMultitouchTrackpad  TrackpadThreeFingerVertSwipeGesture -int 2
+defaults write com.apple.dock  showAppExposeGestureEnabled -boolean true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad  TrackpadFourFingerVertSwipeGesture -int 2
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad  TrackpadThreeFingerVertSwipeGesture -int 2           #アプリケーション Expose
+defaults write com.apple.dock showLaunchpadGestureEnabled -boolean true                                                 #Launchpad
+defaults write com.apple.AppleMultitouchTrackpad TrackpadFiveFingerPinchGesture = 2
+defaults write com.apple.AppleMultitouchTrackpad TrackpadFourFingerPinchGesture = 2
+defaults write com.apple.dock showDesktopGestureEnabled = 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadFiveFingerPinchGesture = 2
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadFourFingerPinchGesture = 2                    #デスクトップを表示
+#マウス
+	#ポイントとクリック
+defaults write -g com.apple.swipescrolldirection -boolean false                                                         #スクロールの方向: ナチュラル
+defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode -string "TwoButton"
+defaults write com.apple.driver.AppleBluetoothMultitouch.mouse "save.MouseButtonMode.v1" -int 1                         #副ボタンのクリック
+defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseOneFingerDoubleTapGesture -int 1                    #スマートズーム
+defaults write -g com.apple.mouse.scaling -int 3                                                                        #軌跡の速さ
+	#その他のジェスチャ
+defaults write -g AppleEnableMouseSwipeNavigateWithScrolls -boolean "true"
+defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseTwoFingerHorizSwipeGesture -int 0                   #ページ間をスワイプ
+defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseTwoFingerHorizSwipeGesture -int 2                   #フルスクリーンアプリケーション間をスワイプ
+defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseTwoFingerDoubleTapGesture -int 3     
 #ディスプレイ（自身で設定）
 #プリンタとスキャナ（自身で設定）
 #バッテリー（自身で設定）
