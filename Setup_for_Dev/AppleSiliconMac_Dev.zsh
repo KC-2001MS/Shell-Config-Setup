@@ -58,6 +58,13 @@ defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Batter
 defaults write com.apple.controlcenter "NSStatusItem Visible UserSwitcher" -bool false
 defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist UserSwitcher -int 24                          #ファストユーザースイッチ メニューバーに表示
 	#メニューバーのみ（自身で設定）
+defaults write com.apple.menuextra.clock ShowDayOfWeek -bool true                                                       #時計 曜日を表示
+defaults write com.apple.menuextra.clock ShowDayOfMonth -bool true                                                      #時計 日付を表示
+defaults write com.apple.menuextra.clock IsAnalog -bool false                                                           #時計 デジタル・アナログ
+defaults write com.apple.menuextra.clock Show24Hour -bool true                                                          #時計 24時間表示にする
+defaults write com.apple.menuextra.clock ShowAMPM -bool false                                                           #時計 午前/午後を表示
+defaults write com.apple.menuextra.clock FlashDateSeparators -bool false                                                #時計 時刻内の":"を点滅させる
+defaults write com.apple.menuextra.clock ShowSeconds -bool true                                                         #時計 秒を表示
 defaults write com.apple.Spotlight "NSStatusItem Visible Item-0" -bool true
 defaults -currentHost write com.apple.Spotlight MenuItemHidden -int 0                                                   #Spotlight メニューバーに表示
 defaults write com.apple.Siri StatusMenuVisible -bool true                                                              #Siri メニューバーに表示
@@ -97,26 +104,51 @@ defaults write com.apple.spotlight orderedItems -array \
     '{"enabled" = 1; "name" = "SPREADSHEETS";}'
 #言語と地域（自身で設定）
 defaults write .GlobalPreferences AppleLanguages -array en ja                                                           #優先する言語
-defaults write .GlobalPreferences AppleLocale -string "en-JP"                                                           #地域
+defaults write .GlobalPreferences AppleMetricUnits -int 1
+defaults write .GlobalPreferences AppleLocale -string "en-JP"
+defaults write .GlobalPreferences AppleMeasurementUnits -string "Centimeters"                                           #地域
+defaults delete .GlobalPreferences AppleICUForce12HourTime                                                              #時刻の書式
 defaults write .GlobalPreferences AppleTemperatureUnit -string "Celsius"                                                #温度
-defaults write .GlobalPreferences AppleMetricUnits -int 1                                                               #測定単位
+
 defaults write .GlobalPreferences AppleFirstWeekday -dict gregorian 1                                                   #週の始まりの曜日
+defaults write .GlobalPreferences AppleCollationOrder -string "ja"                                                      #リストの表示順序
 #通知と集中モード（自身で設定）
 #インターネットアカウント（自身で設定）
 #パスワード（自身で設定）
 #ウォレットとApple Pay（自身で設定）
 #ユーザとグループ（自身で設定）
 #アクセシビリティ（自身で設定）
+#defaults write com.apple.controlcenter "NSStatusItem Visible AccessibilityShortcuts" -bool false
+#defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist AccessibilityShortcuts -int 8                #メニューバーにアクセシビリティの状況を表示
 #スクリーンタイム（自身で設定）
 #拡張機能（自身で設定）
-#セキュリティとプライバシー（自身で設定）
+#セキュリティとプライバシー
+defaults write com.apple.screensaver askForPassword -bool true
+defaults write com.apple.screensaver askForPasswordDelay -int 0                                                         #スリープとスクリーンセーバの解除後にパスワードを要求
 #ソフトウェアアップデート
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 0
-#ネットワーク（自身で設定）
-#Bluetooth（自身で設定）
-#サウンド（自身で設定）
+#ネットワーク
+#defaults write com.apple.controlcenter "NSStatusItem Visible WiFi" -bool true
+#defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist WiFi -int 18                                 #メニューバーにWi-Fiの状況を表示
+#Bluetooth
+#defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool true
+#defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Bluetooth -int 18                            #メニューバーにBluetoothを表示
+#サウンド
+#defaults write com.apple.controlcenter "NSStatusItem Visible Sound" -bool false
+#defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Sound -int 24                                #メニューバーにサウンドを表示
 #Touch ID（自身で設定）
-#キーボード（自身で設定）
+#キーボード
+	#キーボード
+defaults write -g KeyRepeat -int 2                                                                                      #キーのリピート
+defaults write -g InitialKeyRepeat -int 25                                                                              #リピート入力認識までの時間
+defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor.plist "Automatic Keyboard Enabled" -boolean true #環境光が暗い場合にキーボードの輝度を調整
+defaults write com.apple.keyboard.fnState -boolean true                                                                 #F1、F2 などのすべてのキーを標準のファンクションキーとして使用
+	#ユーザ辞書
+	#ショートカット
+	#入力ソース
+defalts write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/TextInput.menu"      #メニューバーに入力メニューを表示
+defaults write com.apple.HIToolbox AppleGlobalTextInputProperties -dict TextInputGlobalPropertyPerContextInput false    #書類ごとに入力ソースを自動的に切り替える
+	#音声入力
 #トラックパット
 	#ポイントとクリック
 defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -int 2
