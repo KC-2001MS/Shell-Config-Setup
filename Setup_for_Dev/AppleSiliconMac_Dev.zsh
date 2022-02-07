@@ -12,7 +12,16 @@ defaults write -g AppleScrollerPagingBehavior -int 1                            
 defaults write -g AppleWindowTabbingMode -string "fullscreen"                                                           #書類をタブで開く場合を指定
 defaults write -g NSCloseAlwaysConfirmsChanges -int 1
 defaults write -g NSQuitAlwaysKeepsWindows -int 0
-#デスクトップとスクリーンセーバ（自身で設定）
+#デスクトップとスクリーンセーバ（一部自身で設定）
+	#ホットコーナー
+#defaults write com.apple.dock wvous-tl-corner -int 9 
+#defaults write com.apple.dock wvous-tl-modifier -int 0                                                                 #左上
+#defaults write com.apple.dock wvous-bl-corner -int 4
+#defaults write com.apple.dock wvous-bl-modifier -int 0                                                                 #左下
+#defaults write com.apple.dock wvous-tr-corner -int 11
+#defaults write com.apple.dock wvous-tr-modifier -int 0                                                                 #右上
+#defaults write com.apple.dock wvous-br-corner -int 14 
+#defaults write com.apple.dock wvous-br-modifier -int 0                                                                 #右下
 #Dockとメニューバー
 	#Dock
 defaults write com.apple.dock tilesize -int 64                                                                          #アイコンサイズ       
@@ -30,7 +39,7 @@ defaults write com.apple.dock show-recents -bool false                          
 defaults write -g _HIHideMenuBar -int 0                                                                                 #デスクトップにメニューバーを自動的に表示/非表示
 defaults write -g AppleMenuBarVisibleInFullscreen -int 0                                                                #フルスクリーンでメニューバーを自動的に表示/非表示
 defaults write com.apple.menuextra.clock DateFormat -string "M\u6708d\u65e5(EEE)  H:mm:ss"                              #日付と時刻のフォーマット（24時間表示、秒表示あり、日付・曜日を表示）
-	#コントロールセンター（自身で設定）
+	#コントロールセンター
 defaults write com.apple.controlcenter "NSStatusItem Visible WiFi" -bool true
 defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist WiFi -int 18                                  #Wi-Fi メニューバーに表示
 defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool true
@@ -57,6 +66,17 @@ defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Batter
 defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist BatteryShowPercentage -bool true              #バッテリー 割合（％）を表示
 defaults write com.apple.controlcenter "NSStatusItem Visible UserSwitcher" -bool false
 defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist UserSwitcher -int 24                          #ファストユーザースイッチ メニューバーに表示
+	#メニューバーのみ
+defaults write com.apple.menuextra.clock ShowDayOfWeek -bool true                                                       #時計 曜日を表示
+defaults write com.apple.menuextra.clock ShowDayOfMonth -bool true                                                      #時計 日付を表示
+defaults write com.apple.menuextra.clock IsAnalog -bool false                                                           #時計 デジタル・アナログ
+defaults write com.apple.menuextra.clock Show24Hour -bool true                                                          #時計 24時間表示にする
+defaults write com.apple.menuextra.clock ShowAMPM -bool false                                                           #時計 午前/午後を表示
+defaults write com.apple.menuextra.clock FlashDateSeparators -bool false                                                #時計 時刻内の":"を点滅させる
+defaults write com.apple.menuextra.clock ShowSeconds -bool true                                                         #時計 秒を表示
+defaults write com.apple.Spotlight "NSStatusItem Visible Item-0" -bool true
+defaults -currentHost write com.apple.Spotlight MenuItemHidden -int 0                                                   #Spotlight メニューバーに表示
+defaults write com.apple.Siri StatusMenuVisible -bool true                                                              #Siri メニューバーに表示
 	#メニューバーのみ（自身で設定）
 defaults write com.apple.menuextra.clock ShowDayOfWeek -bool true                                                       #時計 曜日を表示
 defaults write com.apple.menuextra.clock ShowDayOfMonth -bool true                                                      #時計 日付を表示
@@ -68,16 +88,27 @@ defaults write com.apple.menuextra.clock ShowSeconds -bool true                 
 defaults write com.apple.Spotlight "NSStatusItem Visible Item-0" -bool true
 defaults -currentHost write com.apple.Spotlight MenuItemHidden -int 0                                                   #Spotlight メニューバーに表示
 defaults write com.apple.Siri StatusMenuVisible -bool true                                                              #Siri メニューバーに表示
-
 #Mission Control
 defaults write com.apple.dock mru-spaces -bool false                                                                    #最新の使用状況に基づいて操作スペースを自動的に並べ替える
 defaults write .GlobalPreferences AppleSpacesSwitchOnActivate -bool true                                                #アプリケーションの切り替えで、アプリケーションのウィンドウが開いている操作スペースに移動
 defaults write com.apple.dock expose-group-apps -bool false                                                             #ウインドウをアプリケーションごとにグループ化
 defaults write com.apple.spaces spans-displays -bool true                                                               #ウインドウごとに個別の操作スペース
 	#キーボードとマウスのショートカット（自身で設定）
+	#ホットコーナー
+defaults write com.apple.dock wvous-tl-corner -int 9 
+defaults write com.apple.dock wvous-tl-modifier -int 0                                                                  #左上
+defaults write com.apple.dock wvous-bl-corner -int 4
+defaults write com.apple.dock wvous-bl-modifier -int 0                                                                  #左下
+defaults write com.apple.dock wvous-tr-corner -int 11
+defaults write com.apple.dock wvous-tr-modifier -int 0                                                                  #右上
+defaults write com.apple.dock wvous-br-corner -int 14 
+defaults write com.apple.dock wvous-br-modifier -int 0                                                                  #右下
 #Siri（自身で設定）
 defaults write com.apple.assistant.support.plist "Assistant Enabled" -bool false                                        #"Siriに頼む"を有効にする
 defaults write com.apple.Siri VoiceTriggerUserEnabled -int 0                                                            #"Hey Siri"を聞き取る
+defaults write com.apple.Siri HotkeyTag -int 2                                                                          #ショートカット
+defaults write com.apple.assistant.backedup "Session Language" -string "ja-JP"                                          #言語
+defaults write com.apple.assistant.backedup "Use device speaker for TTS" -int 3                                         #音声フィードバック
 #defaults write com.apple.Siri StatusMenuVisible -bool true                                                             #メニューバーにSiriを表示
 #Spotlight
 defaults write com.apple.spotlight orderedItems -array \
@@ -113,18 +144,21 @@ defaults write .GlobalPreferences AppleTemperatureUnit -string "Celsius"        
 defaults write .GlobalPreferences AppleFirstWeekday -dict gregorian 1                                                   #週の始まりの曜日
 defaults write .GlobalPreferences AppleCollationOrder -string "ja"                                                      #リストの表示順序
 #通知と集中モード（自身で設定）
-#インターネットアカウント（自身で設定）
-#パスワード（自身で設定）
-#ウォレットとApple Pay（自身で設定）
-#ユーザとグループ（自身で設定）
+defaults -currentHost write com.apple.notificationcenterui dndEnabledDisplaySleep -bool false                           #ディズプレイがスリープ中
+defaults -currentHost write com.apple.notificationcenterui dndMirroring -bool false                                     #ディスプレイをミラーリング中または共有中
+#インターネットアカウント＆パスワード＆ウォレットとApple Pay＆ユーザとグループ（自身で設定）
 #アクセシビリティ（自身で設定）
 #defaults write com.apple.controlcenter "NSStatusItem Visible AccessibilityShortcuts" -bool false
 #defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist AccessibilityShortcuts -int 8                #メニューバーにアクセシビリティの状況を表示
 #スクリーンタイム（自身で設定）
 #拡張機能（自身で設定）
 #セキュリティとプライバシー
-defaults write com.apple.screensaver askForPassword -bool true
-defaults write com.apple.screensaver askForPasswordDelay -int 0                                                         #スリープとスクリーンセーバの解除後にパスワードを要求
+	#一般
+defaults write com.apple.screensaver askForPassword -bool true                                                          #スリープとスクリーンセーバの解除後にパスワードを要求
+defaults write com.apple.screensaver askForPasswordDelay -int 0                                                         #開始後
+sudo defaults delete /Library/Preferences/com.apple.loginwindow LoginwindowText                                         #画面がロックされているときにメッセージを表示
+	#ファイアウォール
+sudo defaults delete /Library/Preferences/com.apple.alf globalstate                                                     #ファイアウォール:
 #ソフトウェアアップデート
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 0
 #ネットワーク
@@ -144,11 +178,20 @@ defaults write -g InitialKeyRepeat -int 25                                      
 defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor.plist "Automatic Keyboard Enabled" -boolean true #環境光が暗い場合にキーボードの輝度を調整
 defaults write com.apple.keyboard.fnState -boolean true                                                                 #F1、F2 などのすべてのキーを標準のファンクションキーとして使用
 	#ユーザ辞書
+defaults write -g NSAutomaticSpellingCorrectionEnabled -bool true
+defaults write com.apple.Safari WebAutomaticSpellingCorrectionEnabled -bool true                                        #英字入力中にスペルを自動変換
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false                                              #文頭を自動的に大文字にする
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false                                          #スペースバーを2回押してピリオドを入力
+defaults write NSGlobalDomain NSAutomaticTextCompletionEnabled -bool true                                               #Touch Barに入力候補を表示
+defaults write -g NSSpellCheckerAutomaticallyIdentifiesLanguages -int 1                                                 #スペルチェック
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool true                                             #スマート引用符とスマートダッシュを使用
 	#ショートカット
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 2                                                                #コントロール間のフォーカス移動をキーボードで操作
 	#入力ソース
 defalts write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/TextInput.menu"      #メニューバーに入力メニューを表示
 defaults write com.apple.HIToolbox AppleGlobalTextInputProperties -dict TextInputGlobalPropertyPerContextInput false    #書類ごとに入力ソースを自動的に切り替える
 	#音声入力
+defaults write com.apple.assistant.support "Dictation Enabled" -bool true                                               #音声入力
 #トラックパット
 	#ポイントとクリック
 defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -int 2
@@ -205,17 +248,18 @@ defaults write -g com.apple.mouse.scaling -int 3                                
 defaults write -g AppleEnableMouseSwipeNavigateWithScrolls -boolean "true"
 defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseTwoFingerHorizSwipeGesture -int 0                   #ページ間をスワイプ
 defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseTwoFingerHorizSwipeGesture -int 2                   #フルスクリーンアプリケーション間をスワイプ
-defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseTwoFingerDoubleTapGesture -int 3     
+defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseTwoFingerDoubleTapGesture -int 3                    #Mission Control
 #ディスプレイ（自身で設定）
 #プリンタとスキャナ（自身で設定）
+defaults write org.cups.PrintingPrefs UseLastPrinter -bool true                                                         #デフォルトのプリンタ
+sudo defaults write /Library/Preferences/org.cups.PrintingPrefs DefaultPaperID iso-a4                                   #デフォルトの用紙サイズ
 #バッテリー（自身で設定）
+sudo pmset -b displaysleep 15                                                                                           #ディスプレイをオフにする
 defaults write com.apple.controlcenter "NSStatusItem Visible Battery" -bool true
 defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Battery -int 18                               #メニューバーにバッテリー状況を表示
-#日付と時刻（自身で設定）
-#共有（自身で設定）
+#日付と時刻＆共有（自身で設定）
 #Time Machine（自身で設定）
 sudo tmutil disable                                                                                                     #バックアップを自動生成
-
 #起動ディスク（自身で設定）
 
 #設定画面にない設定
