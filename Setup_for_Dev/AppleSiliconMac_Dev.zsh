@@ -301,7 +301,7 @@ killall Safari
 #install Homebrew and mas-cil
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 wait
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/keisukec/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> "$HOME/.zprofile"
 echo "homebrewインストール完了"
 echo "これで、brewコマンドを利用してhomebrewのアプリをインストールできます。"
 brew install mas
