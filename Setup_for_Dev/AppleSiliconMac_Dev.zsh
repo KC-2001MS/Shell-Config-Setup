@@ -357,8 +357,6 @@ casksapps=(
 	google-drive               #Google Drive
 	dropbox                    #Dropbox Drive
 	box-drive                  #Box Drive
-	#ユーティリティー
-	cheatsheet                 #Cheatsheet
 	#クリエイティブ
 	adobe-creative-cloud       #Adobe Creative Cloud
 	#開発

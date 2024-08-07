@@ -325,8 +325,6 @@ casksapps=(
 	google-drive               #Google Drive
 	dropbox                    #Dropbox Drive
 	box-drive                  #Box Drive
-	#ユーティリティー
-	cheatsheet                 #Cheatsheet
 	#ゲーム
 	steam                      #Steam
 	#コミュニケーションツール
